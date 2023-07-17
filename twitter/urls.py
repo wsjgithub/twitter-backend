@@ -18,8 +18,11 @@ from django.urls import path,include
 from play.urls import urlpatterns as playurls
 from rest_framework import routers, urls as resturls
 from accounts.api import views
+
+
 router = routers.DefaultRouter()
 router.register(r'api/users', views.UserViewSet)
+router.register(r'api/accounts', views.AccountViewSet, basename='accounts')
 
 urlpatterns = [
     path('', include(router.urls)),
