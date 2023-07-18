@@ -9,6 +9,9 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class SignupSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(max_length = 100, min_length = 1)
+    password = serializers.CharField(max_length = 100, min_length = 1)
+    
     class Meta:
         model = User
         fields = ['username', 'email', 'password']
