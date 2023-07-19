@@ -31,3 +31,10 @@ urlpatterns = [
     path('api-auth/', include(resturls, namespace='rest_framework'))
 ]
 
+from django.conf import settings
+# ......
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns.append(
+        path('__debug__', include(debug_toolbar.urls))
+    )
