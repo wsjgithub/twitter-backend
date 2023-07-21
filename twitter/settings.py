@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'play',
     'accounts',
+    'tweets',
     # third party
     'rest_framework',
     'debug_toolbar'
