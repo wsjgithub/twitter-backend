@@ -1,15 +1,15 @@
-from django.test import TestCase
+# from django.test import TestCase
+from testing.testcase import TestCase
 from django.contrib.auth.models import User
 from rest_framework.test import APIClient
 
 LOGIN_URL = "/api/accounts/login/"
 class AccountApiTest(TestCase):
     def setUp(self):
-        username, password, email = "testuser", "password", "abs@abc.com"
-        self.user = User.objects.create_user(username, email, password)
-        print(self.user)
+        # username, password, email = "testuser", "password", "abs@abc.com"
+        # self.user = User.objects.create_user(username, email, password)
+        self.user = self.create_user("testuser", "password", "abs@abc.com")
         self.client = APIClient()
-        print(self.client)
 
     def test_login(self):
         # test with wrong method

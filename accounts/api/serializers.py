@@ -5,7 +5,7 @@ from rest_framework.exceptions import ValidationError
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ['url', 'username', 'email']
+        fields = ['id', 'url', 'username', 'email']
 
 
 class SignupSerializer(serializers.ModelSerializer):

@@ -17,12 +17,13 @@ from django.contrib import admin
 from django.urls import path,include
 from play.urls import urlpatterns as playurls
 from rest_framework import routers, urls as resturls
-from accounts.api import views
-
+from accounts.api.views import UserViewSet, AccountViewSet
+from tweets.views import TweetViewSet
 
 router = routers.DefaultRouter()
-router.register(r'api/users', views.UserViewSet)
-router.register(r'api/accounts', views.AccountViewSet, basename='accounts')
+router.register(r'api/users', UserViewSet)
+router.register(r'api/accounts', AccountViewSet, basename='accounts')
+router.register(r'api/tweets', TweetViewSet, basename='tweets')
 
 urlpatterns = [
     path('', include(router.urls)),
