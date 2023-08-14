@@ -19,11 +19,13 @@ from play.urls import urlpatterns as playurls
 from rest_framework import routers, urls as resturls
 from accounts.api.views import UserViewSet, AccountViewSet
 from tweets.views import TweetViewSet
+from friendship.api.views import FriendshipViewSet
 
 router = routers.DefaultRouter()
 router.register(r'api/users', UserViewSet)
 router.register(r'api/accounts', AccountViewSet, basename='accounts')
 router.register(r'api/tweets', TweetViewSet, basename='tweets')
+router.register(r'api/friendship', FriendshipViewSet, basename='friendship')
 
 urlpatterns = [
     path('', include(router.urls)),

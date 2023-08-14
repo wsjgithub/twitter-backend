@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'play',
     'accounts',
     'tweets',
+    'friendship',
     # third party
     'rest_framework',
     'debug_toolbar'
